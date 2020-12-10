@@ -8,7 +8,7 @@ export default function Home(props) {
 	return (
 		<div className="page">
 			<img src={Logo} alt="logo" />
-			<Button goal="about" />
+			<Button linkTo="landScreen" />
 		</div>
 	)
 }

@@ -7,6 +7,7 @@ import {
   Link
 } from "react-router-dom";
 import Home from './components/molecules/Home'
+import Landscreen from './components/molecules/LandScreen';
 
 export default function App() {
   return (
@@ -18,7 +19,7 @@ export default function App() {
               <Link to="/">Home</Link>
             </li>
             <li>
-              <Link to="/about">About</Link>
+              <Link to="/landScreen">Page d'accueil</Link>
             </li>
             <li>
               <Link to="/users">Users</Link>
@@ -29,8 +30,8 @@ export default function App() {
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
         <Switch>
-          <Route path="/about">
-            <About />
+          <Route path="/landScreen">
+            <Landscreen />
           </Route>
           <Route path="/users">
             <Users />
@@ -45,23 +46,9 @@ export default function App() {
 }
 
 
-function About() {
-  return <h2>About</h2>;
-}
-
 function Users() {
   return <h2>Users</h2>;
 }
 
-/*
-function App() {
-  return (
-    <div className="page">
-      <img src={Logo} alt="logo" />
-      <Button/>
-    </div>
-  );
-}
 
-export default App; */
 

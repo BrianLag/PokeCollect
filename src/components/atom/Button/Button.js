@@ -2,10 +2,10 @@ import React from 'react';
 import './Button.css';
 import { Link } from 'react-router-dom';
 
-const Button = ({ classNameString, goal }) => {
+const Button = ({ classNameString, linkTo }) => {
 	return (
 		<div>
-			<Link to={`/${goal}`}>
+			<Link to={`/${linkTo}`}>
 				<button className={classNameString}>
 					click here
         </button>
