@@ -1,14 +1,17 @@
 import React from 'react';
-import './Button.css'
+import './Button.css';
+import { Link } from 'react-router-dom';
 
-const Button = ({ classNameString }) => {
-    return (
-        <div>
-            <button onClick={() => console.log('test')} className={classNameString}>
-                click here
-            </button>
-        </div>
-    )
+const Button = ({ classNameString, goal }) => {
+	return (
+		<div>
+			<Link to={`/${goal}`}>
+				<button className={classNameString}>
+					click here
+        </button>
+			</Link>
+		</div>
+	)
 }
 
 export default Button;
