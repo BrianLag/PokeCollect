@@ -2,3 +2,10 @@
     background-color: blue;
     color: red;
 }
+
+.axiosButton {
+    background-color:  grey;
+    color: #fff;
+    margin-top: 10%;
+    border-radius: 24;
+}

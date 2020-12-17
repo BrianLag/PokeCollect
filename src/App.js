@@ -1,5 +1,8 @@
 import React from 'react';
 import './App.css';
+// import Button from './components/atom/Button/Button';
+// import ButtonAxios from './components/atom/Button/ButtonAxios';
+// import Logo from './images/PokemonLogo.png'
 import {
   BrowserRouter as Router,
   Switch,
@@ -9,8 +12,16 @@ import {
 import Home from './components/molecules/Home'
 import Landscreen from './components/molecules/LandScreen';
 
+
 export default function App() {
   return (
+    {/*
+    <div className="page">
+      <img src={Logo} alt="logo" />
+      <Button />
+      <ButtonAxios classNameString="axiosButton" />
+    </div>
+*/}
     <Router>
       <div>
         <nav>
