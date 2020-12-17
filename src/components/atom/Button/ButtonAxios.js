@@ -5,9 +5,14 @@ import './Button.css';
 const ButtonAxios = ({ classNameString }) => {
 
     const [dataSpecies ,setDataSpecies ] = useState();
+    const [actualPokemon , setActualPokemon ] = useState({
+      name: "",
+
+    });
+
 
     const pokeSpecies = () => {
-    Axios.get('https://pokeapi.co/api/v2/pokemon-species/1')
+    Axios.get(`https://pokeapi.co/api/v2/pokemon-species/${}`)
       .then((response) => response.data )
       .then((data) => setDataSpecies(data))
       .catch((error) => {
@@ -20,7 +25,7 @@ const ButtonAxios = ({ classNameString }) => {
      pokeSpecies() 
     }, [dataSpecies]);
   
-  //  const poketest = () => { console.log('hello poketest') }
+    const poketest = () => { console.log('hello poketest') }
   
     
     return (
