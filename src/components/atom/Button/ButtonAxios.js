@@ -12,7 +12,7 @@ const ButtonAxios = ({ classNameString }) => {
 
 
     const pokeSpecies = () => {
-    Axios.get(`https://pokeapi.co/api/v2/pokemon-species/${}`)
+    Axios.get(`https://pokeapi.co/api/v2/pokemon-species/1`)
       .then((response) => response.data )
       .then((data) => setDataSpecies(data))
       .catch((error) => {
