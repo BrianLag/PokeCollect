@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './Pokedex.css'
 import { gql, useQuery } from '@apollo/client';
 import { Link } from 'react-router-dom';
-
 
 const PokeGQL = gql`
     query samplePokeAPIquery {
@@ -14,7 +13,6 @@ const PokeGQL = gql`
   `
 
 export function Pokedex(props) {
-  const [pokeNumber, setpokeNumber] = useState('')
   const { loading, error, data } = useQuery(PokeGQL)
 
 
@@ -23,13 +21,13 @@ export function Pokedex(props) {
 
 
   return data.pokemon_v2_pokemonspeciesname.map(({ name, pokemon_species_id }) => (
-    // <Link onClick={() => setpokeNumber(pokemon_species_id)} to={{pathname:`/pokemon/${pokemon_species_id}`}} >
+    <Link to={`pokemon/${pokemon_species_id}`} >
       <div className="pokeBloc">
         <p>
           {pokemon_species_id}. {name}
         </p>
         <img className="pokeImage" src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${pokemon_species_id}.svg`} alt="pokeImage" />
       </div>
-    // </Link> 
+    </Link> 
   ));
 };

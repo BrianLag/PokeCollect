@@ -55,9 +55,7 @@ export default function App() {
             <Route path="/api">
               <Pokelist />
             </Route>
-            <Route path="/pokemon">
-              <Pokemon />
-            </Route>
+            <Route path="/pokemon/:id" children={<Pokemon />} />
             <Route path="/">
               <Home />
             </Route>

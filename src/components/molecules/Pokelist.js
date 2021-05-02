@@ -15,6 +15,7 @@ const Pokelist = ({ pokeNumber }) => {
 
   useEffect(() => {
     pokeSpecies()
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pokeNumber]);
 
   return (<div style={{ display: 'flex', alignItems: 'center', flexDirection: 'column', textAlign: 'center' }}>
