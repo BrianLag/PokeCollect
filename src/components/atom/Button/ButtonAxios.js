@@ -3,13 +3,7 @@ import Axios from 'axios';
 import './Button.css';
 
 const ButtonAxios = ({ classNameString }) => {
-
     const [dataSpecies ,setDataSpecies ] = useState();
-    const [actualPokemon , setActualPokemon ] = useState({
-      name: "",
-
-    });
-
 
     const pokeSpecies = () => {
     Axios.get(`https://pokeapi.co/api/v2/pokemon-species/1`)
@@ -18,16 +12,12 @@ const ButtonAxios = ({ classNameString }) => {
       .catch((error) => {
         console.log(error);
       });
-    }
-  
+    };
   
     useEffect(() =>{
      pokeSpecies() 
     }, [dataSpecies]);
-  
-    const poketest = () => { console.log('hello poketest') }
-  
-    
+   
     return (
         <div>
             <button onClick={() => console.log(dataSpecies)} className={classNameString}>
