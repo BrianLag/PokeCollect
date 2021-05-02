@@ -6,9 +6,19 @@ import {
   Route,
   Link
 } from "react-router-dom";
+import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
+// Components imports
 import Home from './components/molecules/Home'
 import Landscreen from './components/molecules/LandScreen';
 import Pokelist from './components/molecules/Pokelist';
+import Pokemon from './components/molecules/Pokemon';
+
+
+const client = new ApolloClient({
+  uri: 'https://beta.pokeapi.co/graphql/v1beta',
+  cache: new InMemoryCache()
+});
+
 
 export default function App() {
   return (
@@ -33,20 +43,26 @@ export default function App() {
 
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
-        <Switch>
-          <Route path="/landScreen">
-            <Landscreen />
-          </Route>
-          <Route path="/users">
-            <Users />
-          </Route>
-          <Route path="/api">
-            <Pokelist />
-          </Route>    
-          <Route path="/">
-            <Home />
-          </Route>
-        </Switch>
+        <ApolloProvider client={client}>
+
+          <Switch>
+            <Route path="/landScreen">
+              <Landscreen />
+            </Route>
+            <Route path="/users">
+              <Users />
+            </Route>
+            <Route path="/api">
+              <Pokelist />
+            </Route>
+            <Route path="/pokemon">
+              <Pokemon />
+            </Route>
+            <Route path="/">
+              <Home />
+            </Route>
+          </Switch>
+        </ApolloProvider>
       </div>
     </Router>
   );
